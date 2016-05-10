@@ -3,11 +3,11 @@
 
 在前面我们大致了解了链接器以及加载器的基本工作:
 
-https://github.com/leeminghao/doc-linux/blob/master/linker/LinkerAndLoader.md
+https://github.com/novelinux/linker/tree/master/LinkerAndLoader.md
 
 以及C函数的调用方式:
 
-https://github.com/leeminghao/doc-linux/blob/master/linker/CFunctionCall.md
+https://github.com/novelinux/linker/tree/master/CFunctionCall.md
 
 我们了解到:
 
@@ -20,7 +20,7 @@ https://github.com/leeminghao/doc-linux/blob/master/linker/CFunctionCall.md
 
 在详细了解目标文件格式之前，我们可能需要先了解一下链接器可能涉及到的体系结构问题:
 
-https://github.com/leeminghao/doc-linux/blob/master/linker/LinkerArch.md
+https://github.com/novelinux/linker/tree/master/LinkerArch.md
 
 目标文件中都有什么?
 --------------------------------------------------------------------------------
@@ -104,7 +104,7 @@ UNIX 的 a.out 目标文件格式就是针对这种情况的。
 
 简化的a.out:
 
-https://github.com/leeminghao/doc-linux/blob/master/linker/a.out.png
+https://github.com/novelinux/linker/tree/master/a.out.png
 
 独立的 I 和 D 空间还有另一个性能上的优势:
 
@@ -155,4 +155,4 @@ int a_drsize; // 数据重定位段大小
 操作系统加载和启动一个简单的双段文件的过程非常简单,如下图所示:
 加载一个 a.out 文件到一个进程中文件和段构成的图,箭头表明数据流向.
 
-https://github.com/leeminghao/doc-linux/blob/master/linker/a.out_exec.png
+https://github.com/novelinux/linker/tree/master/a.out_exec.png

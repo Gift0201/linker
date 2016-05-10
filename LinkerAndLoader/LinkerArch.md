@@ -156,11 +156,11 @@ V9 扩充了 64 位的寄存器和地址。SPARC 的设计与其它诸如 MIPS�
 
 x86体系结构的c函数调用过程:
 
-* https://github.com/leeminghao/doc-linux/blob/master/linker/CFunctionCall.md
+* https://github.com/novelinux/linker/tree/master/CFunctionCall.md
 
 arm体系结构的c函数调用过程:
 
-* https://github.com/leeminghao/doc-linux/blob/master/linker/GccSsp.md
+* https://github.com/novelinux/linker/tree/master/GccSsp.md
 
 参数和本地变量通常在栈中分配空间,某一个寄存器可以作为栈指针,它可以基址寄存器来使用。
 
@@ -171,7 +171,7 @@ SPARC 和 x86 中使用了该策略的一种比较普遍的变体,在一个过�
 如果假定栈是从高地址向低地址生长的,而框架指针指向返回地址保存在内存中的位置,那么参数就位于框架
 指针较小的正偏移量处,本地变量在负偏移量处。可参考:
 
-https://github.com/leeminghao/doc-linux/blob/master/linker/CFunctionCall.md
+https://github.com/novelinux/linker/tree/master/CFunctionCall.md
 
 由于操作系统通常会在程序启动前为其初始化栈指针,所以程序只需要在将输入压栈或推栈时更新寄存器即可。
 
