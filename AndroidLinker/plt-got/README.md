@@ -91,10 +91,12 @@ print_banner函数内调用了printf函数，而printf函数位于glibc动态库
 
 2. Compile
 
-编译阶段是将.c源代码翻译成汇编指令的中间文件，比如上述的main.c文件，经过编译之后，生成main.o中间文件
-
+```
 aarch64-linux-android29-clang main.S -c -o main.o
 aarch64-linux-android-objdump -d main.o
+```
+
+编译阶段是将.c源代码翻译成汇编指令的中间文件，比如上述的main.c文件，经过编译之后，生成main.o中间文件
 
 ```
 main.o:     file format elf64-littleaarch64
@@ -132,6 +134,11 @@ Disassembly of section .text:
 
 3. Linker
 
+```
+aarch64-linux-android29-clang main.o -o a.out
+aarch64-linux-android-objdump -d a.out
+```
+
 链接阶段是将一个或者多个中间文件（.o文件）通过链接器将它们链接成一个可执行文件，链接阶段主要完成以下事情：
 
 * 各个中间文之间的同名section合并
@@ -148,9 +155,6 @@ Disassembly of section .text:
 根据前面讨论，运行时重定位是无法修改代码段的，只能将printf重定位到数据段。那在编译阶段就已生成好的bl指令，怎么感知这个已重定位好的数据段内容呢？
 
 答案是：链接器生成一段额外的小代码片段，通过这段代码支获取printf函数地址，并完成对它的调用。
-
-aarch64-linux-android29-clang main.o -o a.out
-aarch64-linux-android-objdump -d a.out
 
 ```
 a.out:     file format elf64-littleaarch64
